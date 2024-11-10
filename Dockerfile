@@ -93,7 +93,7 @@ RUN set -eux && \
 
 ################################################################################
 
-FROM nginxinc/nginx-unprivileged:1.27.2-alpine-slim@sha256:d7b15b925f9b38fb7de6146bf29889ed69129825be420b4c970b8758bac762ea
+FROM nginxinc/nginx-unprivileged:1.27.2-alpine-slim@sha256:ce270198978c32cdded8bcaa874781e12fd6c441398529fa98d7e259df4cb420
 
 COPY --from=build /mnt/ /usr/share/nginx/html/
 
