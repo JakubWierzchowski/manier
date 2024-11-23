@@ -378,8 +378,6 @@ Aqua details of container image running inside Amazon EKS cluster:
 
 ### Trivy Scanner
 
-Trivy web scan: <https://trivy.dev/results/?image=quay.io/petr_ruzicka/malware-cryptominer-container:1.4.0>
-
 ```text
 ❯ trivy image quay.io/petr_ruzicka/malware-cryptominer-container:1.4.0
 2023-01-04T10:15:42.045Z   INFO    Vulnerability scanning is enabled
