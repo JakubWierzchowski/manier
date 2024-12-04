@@ -1,0 +1,25 @@
+name: CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v2
+
+      - name: Log in to Harbor
+        run: |
+          echo "1qaz@WSX" | docker login -u "admin" --password-stdin 10.10.10.154:30002
+
+      - name: Build and push malware
+        run: |
+          docker build -t 10.10.10.154:30002/authapp/malware-cryptominer:latest ./malware-cryptominer
+          docker push 10.10.10.154:30002/authapp/malware-cryptominer:latest
